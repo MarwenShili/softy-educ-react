@@ -1,0 +1,23 @@
+.cart_header {
+  border: 1px solid #e0e0e0;
+  border-radius: 33px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 23px 5px 5px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #274c5b;
+  user-select: none;
+  cursor: pointer;
+}
+.cart_header span {
+  width: 56px;
+  height: 56px;
+  background: #274c5b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
