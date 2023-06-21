@@ -1,11 +1,12 @@
-import "./Home.css";
-import banner from "../../assets/icons/Banner.svg";
+import Banner from "../../components/Banner/Banner"
+import banner from "../../assets/icons/Banner.svg"
+import "./Home.css"
 function Home() {
   return (
-    <div className="home_page">
-      <img className="banner_img" src={banner} alt="" />
+    <div className='home_page'>
+      <Banner image={banner}/>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
