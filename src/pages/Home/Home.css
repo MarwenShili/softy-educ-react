@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+.home_page {
+}
+.banner_img {
+  width: 100%;
+  object-fit: fill;
+}
+.container{
+  padding-inline: 26rem;
+  margin-top: 9rem;
+  margin-bottom: 10rem;
+}
+.newsletterContainer{
+  margin-top: 14rem;
+  margin-bottom: 12rem;
+}
+
+.footer{
+margin-top: 12.5rem;
+}
+@media only screen and (max-width: 700px) {
+  .footer {
+   margin-top: 3rem;
+  }
+}
+.productsList{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem 1rem;
+}
+.productItem{
+  width: 33.5rem;
+  height: fit-content; 
+  background: #F9F8F8;
+border-radius: 30px;
+padding-block: 1.6rem;
+}
+.productHeader{
+  margin-inline: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.productImg{
+height: 39rem;
+
+
+}
+.productImg > img{
+width: 100%;
+ 
+}
+@media only screen and (max-width: 900px) {
+  .addToCart > img{
+    height: 2.5rem;
+  }
+}
+.productDetails{
+  margin-inline: 3rem;
+}
+.productDetails >h3{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 2rem;
+line-height: 23px;
+text-align: left;
+color: #274C5B;
+}
+.productInfo{
+
+}
+.tag{
+ display: flex;
+ justify-content: center;
+    align-items: center;
+  width: 9.6rem;
+  height: 3rem;
+  background: #274C5B;
+border-radius: 8px;
+/* padding: 0.5rem 1.2rem 0.6rem; */
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 1.5rem;
+line-height: 20px;
+color: #ffffff;
+}
+.addToCart{
+  background: #274C5B;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+cursor: pointer;
+  align-items: center;
+
+}
+.productInfo{
+  display: flex;
+  justify-content: space-between;
+}
+.pricing{
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.oldPrice{
+  font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 1.5rem;
+line-height: 20px;
+
+color: #B8B8B8;
+}
+.newPrice{
+  font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 1.8rem;
+line-height: 25px;
+
+color: #274C5B;
+}
+.newsletterContainer {
+  padding:10rem 7rem;
+height: 12rem;
+  border-radius: 30px;
+  background: url("/src/assets/newsletter.svg");
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1280px) {
+  .newsletterContainer{
+    flex-wrap: wrap;
+    padding: 8rem 4rem;
+  height: unset;
+  margin-bottom: 10rem;
+  }
+  .container{
+    padding-inline: 6rem;
+    margin-top: 6rem;
+  }
+  }
+  @media only screen and (max-width: 1251px) {
+    .productsList{
+   justify-content: center;
+    }
+    }
+    @media only screen and (max-width: 830px) {
+      .newsletterContainer{
+     display: none;
+      }
+      }
+    
+.newsletterContainer > h1{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 5rem;
+line-height: 6rem;
+color: #FFFFFF;
+}
+.emailInput{
+  display: flex;
+  gap: 6px;
+  flex-basis: 50%;
+}
+.emailInput > button{
+all: unset;
+background: #274C5B;
+border-radius: 16px;
+cursor: pointer;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+padding: 2.8rem 6.4rem;
+color: #FFFFFF;
+}
+@media only screen and (max-width: 950px) {
+  .emailInput > button{
+ padding: 2rem 4rem;
+  }
+  }
+.emailInput > input{
+  width: 3.5rem;
+  all: unset;
+  padding-inline: 3rem;
+  background: #FFFFFF;
+border-radius: 16px;
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+flex-basis: 50%;
+}
