@@ -1,0 +1,14 @@
+.review-stars {
+  display: inline-block;
+  margin-top: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.review-stars__star {
+  cursor: pointer;
+}
+
+.review-stars__star.is-active {
+  color: #ffa858;
+}
