@@ -1,0 +1,31 @@
+.register_page {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 30px;
+  height: calc(100vh - 124px);
+}
+.register_page .left {
+  width: 100%;
+  height: 100%;
+}
+.register_page .left img {
+  width: 90%;
+  height: 100%;
+  object-fit: fill;
+  /* margin-top: 60px; */
+}
+.register_page .right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register_page .right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

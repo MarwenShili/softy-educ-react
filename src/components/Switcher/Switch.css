@@ -1,0 +1,47 @@
+/* //switcher */
+.switcher {
+  background: rgba(73, 187, 189, 0.6);
+  border-radius: 33px;
+  height: 59px;
+  min-width: 309px;
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 13px;
+  gap: 40px;
+}
+
+.switcher button {
+  border-radius: 33px;
+  border: none;
+  height: 40px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  background: transparent;
+}
+.switcher .login {
+  background: #49bbbd;
+  border-radius: 33px;
+  border: none;
+  height: 40px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.switcher .register {
+  background: #49bbbd;
+  border-radius: 33px;
+  border: none;
+  height: 40px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
