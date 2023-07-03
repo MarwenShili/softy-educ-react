@@ -10,6 +10,7 @@
   justify-content: center;
   padding: 0px 13px;
   gap: 40px;
+  min-height: 59px;
 }
 
 .switcher button {
@@ -44,4 +45,9 @@
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
+}
+@media only screen and (max-width: 409px) {
+  .switcher {
+    min-width: 100%;
+  }
 }
