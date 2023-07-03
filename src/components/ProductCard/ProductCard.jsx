@@ -28,10 +28,10 @@ const ProductCard = props => {
       <div className='product-card__footer'>
         <div className='product-card__price'>
           <span className='product-card__original-price'>
-            ${props.originalPrice}
+            ${props.originalPrice.toFixed(2)}
           </span>
           <span className='product-card__discount-price'>
-            ${props.discountPrice}
+            ${props.discountPrice.toFixed(2)}
           </span>
         </div>
         <ReviewStars
