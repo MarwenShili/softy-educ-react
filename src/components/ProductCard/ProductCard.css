@@ -36,6 +36,7 @@
   height: 56px;
   background: #274c5b;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .product-card__image {

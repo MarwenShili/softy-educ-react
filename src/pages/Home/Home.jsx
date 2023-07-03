@@ -5,6 +5,7 @@ import bannerImg from "../../assets/icons/Banner.svg"
 import productData from "../../data/productsData"
 
 import "./Home.css"
+import CallToAction from "../../components/CallToAction/CallToAction"
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
+        <CallToAction />
       </Container>
     </div>
   )

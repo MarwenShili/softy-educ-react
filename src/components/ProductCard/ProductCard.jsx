@@ -1,9 +1,8 @@
 import React from "react"
-import { ReactComponent as AddToCart } from "../../assets/icons/add-to-cart.svg"
-
-import ReviewStars from "../ReviewStars/ReviewStars"
-import "./ProductCard.css"
 import { Link } from "react-router-dom"
+import ReviewStars from "../ReviewStars/ReviewStars"
+import { ReactComponent as AddToCart } from "../../assets/icons/add-to-cart.svg"
+import "./ProductCard.css"
 
 const ProductCard = props => {
   return (
@@ -12,12 +11,18 @@ const ProductCard = props => {
         <button className='product-card__btns--category-button'>
           {props.category}
         </button>
-        <button className='product-card__btns--add-to-cart-button'>
+        <button
+          className='product-card__btns--add-to-cart-button'
+          onClick={() => console.log("Add Product to cart")}>
           <AddToCart />
         </button>
       </div>
       <Link to={`/products/${props.id}`}>
-        <img className='product-card__image' src={props.image} alt='Product' />
+        <img
+          className='product-card__image'
+          src={props.image}
+          alt={props.name}
+        />
         <h3 className='product-card__name'>{props.name}</h3>
       </Link>
       <div className='product-card__footer'>
