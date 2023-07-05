@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 
 import Banner from "../../components/Banner/Banner"
-import productImgPlaceholder from "../../assets/product-details-placeholder.png"
+import productImgPlaceholder from "../../assets/images/product-details-placeholder.png"
 import ReviewStars from "../../components/ReviewStars/ReviewStars.jsx"
 import Button from "../../components/Button/Button"
 import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow-add-to-cart.svg"
-import banner from "../../assets/product-details-banner.png"
+import banner from "../../assets/images/product-details-banner.png"
 import "./ProductDetails.css"
 
 const ProductDetails = () => {
