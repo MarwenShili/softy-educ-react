@@ -11,6 +11,7 @@ const RoutesProvider = () => {
   const ProductDetail = lazy(() =>
     import("./pages/ProductDetails/ProductDetails")
   );
+  const Cart = lazy(() => import("./pages/Cart/Cart"));
 
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ const RoutesProvider = () => {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="products/:id" element={<ProductDetail />} />
+            <Route path="cart" element={<Cart />} />
           </Route>
           {/* Uncreated Routes */}
           <Route path="*" element={<h1>Page not found</h1>} />

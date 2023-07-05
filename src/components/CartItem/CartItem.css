@@ -1,0 +1,93 @@
+.cart_item {
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  min-height: 100px;
+  flex-shrink: 0;
+  padding: 3px 20px 3px 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 30px;
+}
+
+.cart_item .left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.cart_item .left .titles .desc {
+  color: #1e1e1e;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.cart_item .left .titles .title_cart_item {
+  color: #274c5b;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 7px;
+}
+.cart_item .left img {
+  object-fit: fill;
+  width: 80px;
+  height: 82.286px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.cart_item .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart_item .right .counts {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cart_item .right .counts .btns {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cart_item .right .counts .btns img {
+  cursor: pointer;
+}
+
+.cart_item .right .delete {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.cart_item .counts {
+  color: #393939;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.cart_item .price {
+  color: #393939;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@media only screen and (max-width: 500px) {
+  .cart_item {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+}

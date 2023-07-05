@@ -1,27 +1,27 @@
-.login_form {
+.register_form {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.login_form p {
+.register_form p {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #5b5b5b;
   max-width: 435px;
-  margin: 32px 0 22px 0;
+  margin: 22px 0 22px 0;
 }
-.login_form .form_item {
+.register_form .form_item {
   width: 100%;
   max-width: 435px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
-.login_form .form_item label {
+.register_form .form_item label {
   text-align: left !important;
   width: 100%;
   font-weight: 400;
@@ -30,7 +30,7 @@
   color: #000000;
   margin-bottom: 12px;
 }
-.login_form input {
+.register_form input {
   width: 100%;
   background: #ffffff;
   border: 1px solid #49bbbd;
@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: center;
 }
-.login_form .form_item input::placeholder {
+.register_form .form_item input::placeholder {
   font-weight: 300;
   font-size: 15px;
   line-height: 22px;
@@ -64,8 +64,9 @@
   white-space: nowrap;
   gap: 5px;
 }
+
 @media only screen and (max-width: 459px) {
-  .login_form input {
+  .register_form input {
     padding: 17px 12px;
   }
 }
