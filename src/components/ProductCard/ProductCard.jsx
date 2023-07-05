@@ -3,14 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 import ReviewStars from "../ReviewStars/ReviewStars";
 import { ReactComponent as AddToCart } from "../../assets/icons/add-to-cart.svg";
 import "./ProductCard.css";
-
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../store/slices/Cart-Slice";
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleNavigate = () => {
     return navigate(`/products/${product?.id}`, {
       state: { product: product },
     });
   };
+
+  const addProductToCart = (event) => {
+    event.stopPropagation(); // Stop event propagation
+    dispatch(addItemToCart({ ...product, quantity: 1 }));
+  };
+
   return (
     <div className="product-card" onClick={handleNavigate}>
       <div className="product-card__btns">
@@ -19,7 +28,7 @@ const ProductCard = ({ product }) => {
         </button>
         <button
           className="product-card__btns--add-to-cart-button"
-          onClick={() => console.log("Add Product to cart")}
+          onClick={addProductToCart}
         >
           <AddToCart />
         </button>

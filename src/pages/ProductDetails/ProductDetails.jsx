@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-
 import Banner from "../../components/Banner/Banner";
-import productImgPlaceholder from "../../assets/images/product-details-placeholder.png";
 import ReviewStars from "../../components/ReviewStars/ReviewStars.jsx";
 import Button from "../../components/Button/Button";
 import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow-add-to-cart.svg";
 import banner from "../../assets/images/product-details-banner.png";
 import "./ProductDetails.css";
 import { useLocation } from "react-router-dom";
+import { addItemToCart } from "../../store/slices/Cart-Slice";
+import { useDispatch } from "react-redux";
 
 const ProductDetails = () => {
   const [quantityValue, setQuantityValue] = useState(1);
+  const dispatch = useDispatch();
+
   const handleStarReview = (star) => console.log(star);
   const location = useLocation();
   const { product } = location?.state;
 
+  const addProductToCart = () => {
+    dispatch(addItemToCart({ ...product, quantity: quantityValue }));
+  };
   return (
     <main>
       <div className="product-details-banner">
@@ -54,7 +59,7 @@ const ProductDetails = () => {
                   min={1}
                   id="quantity"
                 />
-                <Button>
+                <Button onClick={addProductToCart}>
                   <span>Add to Cart</span>
                   <RightArrow />
                 </Button>
