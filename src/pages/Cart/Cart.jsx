@@ -1,8 +1,11 @@
 import CartItem from "../../components/CartItem/CartItem";
 import "./Cart.css";
 import { cartProducts } from "../../constants/cartProducts";
+import { useSelector } from "react-redux";
 
 function Cart() {
+  const { items } = useSelector((state) => state.cart);
+  console.log(items);
   return (
     <div className="cart">
       <div className="left">
@@ -12,7 +15,7 @@ function Cart() {
           <p className="title">Shopping cart</p>
           <p className="subtitle">You have 3 item in your cart</p>
           <div className="cards">
-            {cartProducts.map((product, index) => (
+            {items?.map((product, index) => (
               <CartItem key={index} product={product} />
             ))}
           </div>
