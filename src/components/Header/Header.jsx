@@ -4,8 +4,9 @@ import logo from "../../assets/icons/Logo.svg";
 import { NavLink } from "react-router-dom";
 import CartHeader from "../CartHeader/CartHeader";
 import Menu from "../Menu/Menu";
+import Sidebar from "../Sidebar/Sidebar";
 
-function Header() {
+function Header({ setIsOpen, isOpen }) {
   return (
     <header className="header">
       <div className="header_content">
@@ -15,7 +16,7 @@ function Header() {
           </a>
           <div className="navigations">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/">Shop</NavLink>
+            {/* <NavLink to="/">Shop</NavLink> */}
             <NavLink to="/login">Login</NavLink>
           </div>
         </div>
@@ -23,7 +24,7 @@ function Header() {
           <div className="header_actions">
             <CartHeader />
           </div>
-          <Menu />
+          <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
     </header>
