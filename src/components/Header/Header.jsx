@@ -11,7 +11,7 @@ function Header({ setIsOpen, isOpen }) {
     <header className="header">
       <div className="header_content">
         <div className="s_left">
-          <a href="#" className="logo">
+          <a href="/" className="logo">
             <img src={logo} alt="" />
           </a>
           <div className="navigations">

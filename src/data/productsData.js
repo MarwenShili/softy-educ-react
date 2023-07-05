@@ -1,15 +1,15 @@
-import productOne from "../assets/products/product-1.png"
-import productTwo from "../assets/products/product-2.png"
-import productThree from "../assets/products/product-3.png"
-import productFour from "../assets/products/product-4.png"
-import productFive from "../assets/products/product-5.png"
-import productSix from "../assets/products/product-6.png"
-import productSeven from "../assets/products/product-7.png"
-import productEight from "../assets/products/product-8.png"
-import productNine from "../assets/products/product-9.png"
-import productTeen from "../assets/products/product-10.png"
-import productEleven from "../assets/products/product-11.png"
-import productTwelve from "../assets/products/product-12.png"
+import productOne from "../assets/products/product-1.png";
+import productTwo from "../assets/products/product-2.png";
+import productThree from "../assets/products/product-3.png";
+import productFour from "../assets/products/product-4.png";
+import productFive from "../assets/products/product-5.png";
+import productSix from "../assets/products/product-6.png";
+import productSeven from "../assets/products/product-7.png";
+import productEight from "../assets/products/product-8.png";
+import productNine from "../assets/products/product-9.png";
+import productTeen from "../assets/products/product-10.png";
+import productEleven from "../assets/products/product-11.png";
+import productTwelve from "../assets/products/product-12.png";
 
 const productData = [
   {
@@ -22,7 +22,7 @@ const productData = [
       "Calabrese Broccoli is a nutrient-dense vegetable that can be enjoyed steamed, roasted, or added to stir-fries and salads.",
     originalPrice: 20.0,
     discountPrice: 13.0,
-    reviewStars: 5,
+    reviewStars: 2,
   },
   {
     id: 2,
@@ -157,6 +157,18 @@ const productData = [
     discountPrice: 11.0,
     reviewStars: 5,
   },
-]
+  {
+    id: 13,
+    category: "Vegetable",
+    name: "Calabrese Broccoli",
+    image: productOne,
+    summary: "Fresh and nutritious Calabrese Broccoli.",
+    description:
+      "Calabrese Broccoli is a nutrient-dense vegetable that can be enjoyed steamed, roasted, or added to stir-fries and salads.",
+    originalPrice: 20.0,
+    discountPrice: 13.0,
+    reviewStars: 5,
+  },
+];
 
-export default productData
+export default productData;

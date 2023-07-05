@@ -1,55 +1,58 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import Banner from "../../components/Banner/Banner"
-import productImgPlaceholder from "../../assets/images/product-details-placeholder.png"
-import ReviewStars from "../../components/ReviewStars/ReviewStars.jsx"
-import Button from "../../components/Button/Button"
-import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow-add-to-cart.svg"
-import banner from "../../assets/images/product-details-banner.png"
-import "./ProductDetails.css"
+import Banner from "../../components/Banner/Banner";
+import productImgPlaceholder from "../../assets/images/product-details-placeholder.png";
+import ReviewStars from "../../components/ReviewStars/ReviewStars.jsx";
+import Button from "../../components/Button/Button";
+import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow-add-to-cart.svg";
+import banner from "../../assets/images/product-details-banner.png";
+import "./ProductDetails.css";
+import { useLocation } from "react-router-dom";
 
 const ProductDetails = () => {
-  const [quantityValue, setQuantityValue] = useState(1)
-  const handleStarReview = star => console.log(star)
+  const [quantityValue, setQuantityValue] = useState(1);
+  const handleStarReview = (star) => console.log(star);
+  const location = useLocation();
+  const { product } = location?.state;
+
   return (
     <main>
-      <div className='product-details-banner'>
+      <div className="product-details-banner">
         <Banner image={banner} />
       </div>
-      <div className='product-details'>
-        <section className='overview'>
-          <div className='overview__image'>
-            <button className='overview__image-btn'>Millets</button>
-            <div className='overview__image-img-container'>
+      <div className="product-details">
+        <section className="overview">
+          <div className="overview__image">
+            <button className="overview__image-btn">{product?.category}</button>
+            <div className="overview__image-img-container">
               <img
-                src={productImgPlaceholder}
-                alt='Product alternative text'
-                className='overview__image-img-container__img'
+                src={product?.image}
+                alt="Product alternative text"
+                className="overview__image-img-container__img"
               />
             </div>
           </div>
-          <div className='overview__content'>
-            <h2 className='overview__title'>Health Pistachios</h2>
-            <ReviewStars existRating={4} onStarClick={handleStarReview} />
-            <div className='price'>
-              <span className='original-price'>$13.00</span>
-              <span className='discount'>$20.00</span>
+          <div className="overview__content">
+            <h2 className="overview__title">{product?.name}</h2>
+            <ReviewStars
+              existRating={product?.reviewStars}
+              onStarClick={handleStarReview}
+            />
+            <div className="price">
+              <span className="original-price">${product?.originalPrice}</span>
+              <span className="discount">${product.discountPrice}</span>
             </div>
-            <div className='description'>
-              Simply dummy text of the printing and typesetting industry. Lorem
-              had ceased to been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley.
-            </div>
-            <div className='actions'>
-              <div className='quantity'>
-                <label htmlFor='quantity'>Quantity:</label>
+            <div className="description">{product.description}</div>
+            <div className="actions">
+              <div className="quantity">
+                <label htmlFor="quantity">Quantity:</label>
                 <input
-                  type='number'
-                  className='quantity-input'
+                  type="number"
+                  className="quantity-input"
                   value={quantityValue}
-                  onChange={e => setQuantityValue(e.target.value)}
+                  onChange={(e) => setQuantityValue(e.target.value)}
                   min={1}
-                  id='quantity'
+                  id="quantity"
                 />
                 <Button>
                   <span>Add to Cart</span>
@@ -59,12 +62,12 @@ const ProductDetails = () => {
             </div>
           </div>
         </section>
-        <div className='product-details__description'>
-          <div className='product-details__description-btns-container'>
+        <div className="product-details__description">
+          <div className="product-details__description-btns-container">
             <Button>Product Description</Button>
             <Button isSecondary={true}>Additional Info</Button>
           </div>
-          <p className='product-details__description-text'>
+          <p className="product-details__description-text">
             Welcome to the world of natural and organic. Here you can discover
             the bounty of nature. We have grown on the principles of health,
             ecology, and care. We aim to give our customers a healthy
@@ -75,7 +78,7 @@ const ProductDetails = () => {
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default ProductDetails
+export default ProductDetails;
