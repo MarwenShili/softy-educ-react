@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import CartHeader from "../CartHeader/CartHeader";
 import Menu from "../Menu/Menu";
 import Sidebar from "../Sidebar/Sidebar";
+import Search from "../Search/Search";
 
 function Header({ setIsOpen, isOpen }) {
   return (
@@ -21,6 +22,9 @@ function Header({ setIsOpen, isOpen }) {
           </div>
         </div>
         <div className="s_right">
+          <div className="search_s">
+            <Search />
+          </div>
           <div className="header_actions">
             <CartHeader />
           </div>

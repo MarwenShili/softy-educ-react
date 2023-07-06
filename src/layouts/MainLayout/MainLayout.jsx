@@ -14,7 +14,7 @@ const MainLayout = () => {
         <Outlet />
         <Footer />
       </div>
-      <Sidebar isOpen={isOpen} />
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

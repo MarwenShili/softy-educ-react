@@ -6,8 +6,12 @@ function CartHeader() {
   const navigate = useNavigate();
   const { totalQuantity } = useSelector((state) => state.cart);
 
+  const handleNavigate = () => {
+    navigate("/cart");
+  };
+
   return (
-    <div className="cart_header" onClick={() => navigate("/cart")}>
+    <div className="cart_header" onClick={handleNavigate}>
       <span>
         <img src={cartIcon} alt="" />
       </span>

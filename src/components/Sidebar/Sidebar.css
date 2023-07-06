@@ -1,5 +1,6 @@
 .sidebar {
-  width: 400px;
+  max-width: 400px;
+  min-width: 350px;
   left: 0;
   position: absolute;
   height: 100vh;
@@ -8,6 +9,7 @@
   overflow: hidden;
   position: fixed;
   display: none;
+  padding: 30px;
 }
 .closed {
   left: -400px;
@@ -23,7 +25,31 @@
   padding: 30px;
 }
 
-@media only screen and (max-width: 900px) {
+.sidebar .items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.sidebar .items .link_sidebar {
+  width: 100%;
+  padding: 13px 10px;
+  border-radius: 8px;
+  background: #eff6f1;
+  color: #274c5b;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.sidebar .items .link_sidebar:hover {
+  width: 100%;
+  padding: 13px 10px;
+  border-radius: 8px;
+  background: #274c5b;
+  color: #fff;
+}
+
+@media only screen and (max-width: 990px) {
   .sidebar {
     display: block;
   }

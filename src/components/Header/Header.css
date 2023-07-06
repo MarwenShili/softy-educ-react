@@ -41,12 +41,22 @@ header .navigations a {
   color: #274c5b;
   text-decoration: none;
 }
+.s_right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-end;
+}
+.s_right .search_s {
+  width: 376px;
+}
 @media only screen and (max-width: 1600px) {
   .header .header_content {
     padding: 0 100px;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1300px) {
   .header .header_content {
     padding: 0 50px;
   }
@@ -62,11 +72,17 @@ header .navigations a {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 990px) {
   .header {
     height: 80px;
   }
+  .s_right .search_s {
+    width: 100%;
+  }
   .header .header_content .navigations {
+    display: none;
+  }
+  .search_s {
     display: none;
   }
   .header_actions {

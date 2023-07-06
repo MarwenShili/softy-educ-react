@@ -42,6 +42,20 @@
   cursor: pointer;
 }
 
+.product-card__btns--add-to-cart-button:hover {
+  animation: rotate-btn 0.2s linear 1;
+  -webkit-animation: rotate-btn 0.5s linear 1;
+}
+
+@keyframes rotate-btn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .product-card__image {
   width: 100%;
   height: 324px;
@@ -81,4 +95,10 @@
   color: #274c5b;
   font-size: 18px;
   font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+  .product-card {
+    border-radius: 12px;
+  }
 }
