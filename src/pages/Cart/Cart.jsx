@@ -1,11 +1,15 @@
 import CartItem from "../../components/CartItem/CartItem";
 import "./Cart.css";
-import { cartProducts } from "../../constants/cartProducts";
 import { useSelector } from "react-redux";
+import InvoiceDetails from "../../components/InvoiceDetails/InvoiceDetails";
+import EmptyCart from "../../components/EmptyCart/EmptyCart";
 
 function Cart() {
   const { items } = useSelector((state) => state.cart);
-  console.log(items);
+
+  if (items.length === 0) {
+    return <EmptyCart />;
+  }
   return (
     <div className="cart">
       <div className="left">
@@ -22,31 +26,7 @@ function Cart() {
         </div>
       </div>
       <div className="right">
-        <p className="title">Have a Coupon?</p>
-        <input
-          type="email"
-          className="email"
-          placeholder="Enter your email here"
-        />
-        <div>
-          <button className="btn_apply">Apply</button>
-        </div>
-        <div className="totals">
-          <p className="title">Cart Totals</p>
-          <div className="inv_item subtotal">
-            <p>Subtotal</p>
-            <span>$150</span>
-          </div>
-          <div className="inv_item shipping">
-            <p>Shipping</p>
-            <span>Free</span>
-          </div>
-          <div className="inv_item total">
-            <p>Total</p>
-            <span>$150</span>
-          </div>
-          <button className="btn_apply checkout_btn">Checkout</button>
-        </div>
+        <InvoiceDetails />
       </div>
     </div>
   );
