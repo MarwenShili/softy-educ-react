@@ -6,12 +6,11 @@ import { useState } from "react";
 import {
   addItemToCart,
   removeItemFromCart,
+  deleteItemFromCart,
 } from "../../store/slices/Cart-Slice";
 import { useDispatch } from "react-redux";
 
 function CartItem({ product }) {
-  const [quantity, setQuantity] = useState(product.quantity);
-
   const dispatch = useDispatch();
 
   const calcPrice = (price, quantity) => {
@@ -24,6 +23,9 @@ function CartItem({ product }) {
   };
   const removeProductFromCart = () => {
     dispatch(removeItemFromCart(product?.id));
+  };
+  const deleteProductFromCart = () => {
+    dispatch(deleteItemFromCart(product?.id));
   };
   return (
     <div className="cart_item">
@@ -46,7 +48,7 @@ function CartItem({ product }) {
           ${calcPrice(product?.discountPrice, product?.quantity)}
         </p>
         <button className="delete">
-          <img src={trashIcon} alt="" />
+          <img src={trashIcon} alt="" onClick={deleteProductFromCart} />
         </button>
       </div>
     </div>
