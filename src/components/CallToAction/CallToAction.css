@@ -50,13 +50,23 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 1250px) {
+  .cta {
+    padding: 30px 30px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .cta {
     padding: 30px 30px;
+    border-radius: 10px;
   }
 
   .cta__form {
     flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   .cta__subscribe {
