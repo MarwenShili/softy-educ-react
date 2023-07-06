@@ -2,11 +2,14 @@ import CartItem from "../../components/CartItem/CartItem";
 import "./Cart.css";
 import { useSelector } from "react-redux";
 import InvoiceDetails from "../../components/InvoiceDetails/InvoiceDetails";
+import EmptyCart from "../../components/EmptyCart/EmptyCart";
 
 function Cart() {
   const { items } = useSelector((state) => state.cart);
 
-  console.log(items);
+  if (items.length === 0) {
+    return <EmptyCart />;
+  }
   return (
     <div className="cart">
       <div className="left">
