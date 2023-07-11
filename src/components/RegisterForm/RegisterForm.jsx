@@ -2,25 +2,24 @@ import "./RegisterForm.css";
 import AuthBtn from "../AuthBtn/AuthBtn";
 import { useState } from "react";
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function RegisterForm() {
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-    username: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setValues((prevProps) => ({
-      ...prevProps,
-      [name]: value,
-    }));
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(values);
+    console.log({ email, password, username });
   };
   return (
     <form action="" className="register_form" onSubmit={handleSubmit}>
@@ -35,17 +34,17 @@ function RegisterForm() {
             type="text"
             placeholder="Enter your Email "
             name="email"
-            value={values.email}
-            onChange={handleInputChange}
+            value={email}
+            onChange={handleEmailChange}
           />
         </div>
         <div className="form_item">
           <label htmlFor="">User name</label>
           <input
             type="text"
-            value={values.username}
+            value={username}
             placeholder="Enter your User name "
-            onChange={handleInputChange}
+            onChange={handleUsernameChange}
             name="username"
           />
         </div>
@@ -54,8 +53,8 @@ function RegisterForm() {
           <input
             type="password"
             placeholder="Enter your Password"
-            onChange={handleInputChange}
-            value={values.password}
+            onChange={handlePasswordChange}
+            value={password}
             name="password"
           />
         </div>
