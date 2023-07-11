@@ -4,11 +4,31 @@ import { useState } from "react";
 
 function RegisterForm() {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
+  function ValidateEmailAddress(emailString) {
+    // check for @ sign
+    var atSymbol = emailString.indexOf("@");
+    if (atSymbol < 1) return false;
+
+    var dot = emailString.indexOf(".");
+    if (dot <= atSymbol + 2) return false;
+
+    // check that the dot is not at the end
+    if (dot === emailString.length - 1) return false;
+
+    return true;
+  }
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+
+    if (ValidateEmailAddress(event.target.value)) {
+      setError("");
+    } else {
+      setError("Email Not Valid");
+    }
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -19,6 +39,11 @@ function RegisterForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (ValidateEmailAddress(email)) {
+      setError("");
+    } else {
+      setError("Email Not Valid");
+    }
     console.log({ email, password, username });
   };
   return (
@@ -37,6 +62,7 @@ function RegisterForm() {
             value={email}
             onChange={handleEmailChange}
           />
+          <p className="error_msg">{error}</p>
         </div>
         <div className="form_item">
           <label htmlFor="">User name</label>

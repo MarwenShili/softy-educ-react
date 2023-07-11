@@ -5,6 +5,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .register_form p {
   font-weight: 400;
   font-size: 16px;
@@ -12,6 +13,14 @@
   color: #5b5b5b;
   max-width: 435px;
   margin: 22px 0 22px 0;
+}
+.register_form .form_item .error_msg {
+  color: red;
+  font-size: 13px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 .register_form .form_item {
   width: 100%;
