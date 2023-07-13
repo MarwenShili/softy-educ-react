@@ -4,46 +4,68 @@ import { useState } from "react";
 
 function RegisterForm() {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [userNameError, setUserNameError] = useState(false);
+
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
   function ValidateEmailAddress(emailString) {
     // check for @ sign
     var atSymbol = emailString.indexOf("@");
-    if (atSymbol < 1) return false;
-
+    if (atSymbol < 1) {
+      setEmailError("Please enter a valid email address.");
+    }
     var dot = emailString.indexOf(".");
-    if (dot <= atSymbol + 2) return false;
-
+    if (dot <= atSymbol + 2) {
+      setEmailError("Please enter a valid email address.");
+    }
     // check that the dot is not at the end
-    if (dot === emailString.length - 1) return false;
+    if (dot === emailString.length - 1) {
+      setEmailError("Please enter a valid email address.");
+    }
 
     return true;
   }
+
+  function ValidatePassword(passwordString) {
+    if (passwordString.trim().length === 0) {
+      setPasswordError("Password is required");
+    } else if (passwordString.trim().length < 4) {
+      setPasswordError("Too short");
+    } else {
+      setPasswordError(false);
+    }
+  }
+  function ValidateUserName(usernameString) {
+    if (usernameString.trim().length === 0) {
+      setUserNameError("User name is required");
+    } else if (usernameString.trim().length < 4) {
+      setUserNameError("Too short");
+    } else {
+      setUserNameError(false);
+    }
+  }
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
-
-    if (ValidateEmailAddress(event.target.value)) {
-      setError("");
-    } else {
-      setError("Email Not Valid");
-    }
+    ValidateEmailAddress(event.target.value);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+    ValidatePassword(event.target.value);
   };
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
+    ValidateUserName(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (ValidateEmailAddress(email)) {
-      setError("");
-    } else {
-      setError("Email Not Valid");
-    }
+    //validate fields when click submit button
+    ValidateEmailAddress(email);
+    ValidatePassword(password);
+    ValidateUserName(username);
     console.log({ email, password, username });
   };
   return (
@@ -62,7 +84,7 @@ function RegisterForm() {
             value={email}
             onChange={handleEmailChange}
           />
-          <p className="error_msg">{error}</p>
+          <p className="error_msg">{emailError}</p>
         </div>
         <div className="form_item">
           <label htmlFor="">User name</label>
@@ -73,6 +95,7 @@ function RegisterForm() {
             onChange={handleUsernameChange}
             name="username"
           />
+          <p className="error_msg">{userNameError}</p>
         </div>
         <div className="form_item">
           <label htmlFor="">password</label>
@@ -83,6 +106,7 @@ function RegisterForm() {
             value={password}
             name="password"
           />
+          <p className="error_msg">{passwordError}</p>
         </div>
 
         <AuthBtn type="submit" onClick={handleSubmit}>

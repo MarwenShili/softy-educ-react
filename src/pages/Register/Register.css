@@ -3,7 +3,7 @@
   align-items: center;
   /* justify-content: center; */
   gap: 30px;
-  height: calc(100vh - 124px);
+  /* height: calc(100vh - 124px); */
 }
 .register_page .left {
   width: 100%;
