@@ -1,13 +1,15 @@
 import "./RegisterForm.css";
 import AuthBtn from "../AuthBtn/AuthBtn";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "../../store/slices/Auth-Slice";
 
 function RegisterForm() {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [userNameError, setUserNameError] = useState(false);
-
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
@@ -28,7 +30,6 @@ function RegisterForm() {
 
     return true;
   }
-
   function ValidatePassword(passwordString) {
     if (passwordString.trim().length === 0) {
       setPasswordError("Password is required");
@@ -67,6 +68,18 @@ function RegisterForm() {
     ValidatePassword(password);
     ValidateUserName(username);
     console.log({ email, password, username });
+
+    dispatch(register({ email, password, username }))
+      .unwrap()
+      .then((originalPromiseResult) => {
+        // handle result here
+        console.log("tt");
+      })
+      .catch((rejectedValueOrSerializedError) => {
+        console.log(rejectedValueOrSerializedError);
+
+        // handle error here
+      });
   };
   return (
     <form action="" className="register_form" onSubmit={handleSubmit}>
